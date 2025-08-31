@@ -1,6 +1,6 @@
 import express from "express";
 import { TestRoutes } from "../modules/testModule/test.route";
-import { TipsCategoryRoutes } from "../TipsCategory/tipsCategory.route";
+import { TipsCategoryRoutes } from "../modules/TipsCategory/tipsCategory.route";
 
 const router = express.Router();
 

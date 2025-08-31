@@ -1,5 +1,5 @@
-import catchAsync from "../utils/asyncCatch";
-import sendResponse from "../utils/sendResponse";
+import catchAsync from "../../utils/asyncCatch";
+import sendResponse from "../../utils/sendResponse";
 import { TipsCategoryServices } from "./tipsCategory.service";
 import httpStatus from "http-status";
 

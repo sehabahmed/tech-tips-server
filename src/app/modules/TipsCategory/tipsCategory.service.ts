@@ -1,4 +1,4 @@
-import { QueryBuilder } from "../builder/QueryBuilder";
+import { QueryBuilder } from "../../builder/QueryBuilder";
 import { tipsCategorySearchableFields } from "./tipsCategory.constant";
 import { TTipsCategory } from "./tipsCategory.interface";
 import { TipsCategory } from "./tipsCategory.model";

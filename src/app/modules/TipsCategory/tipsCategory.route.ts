@@ -1,6 +1,6 @@
 import express from 'express';
 import { TipsCategoryControllers } from './tipsCategory.controller';
-import { validateRequest } from '../middlewares/validateRequest';
+import { validateRequest } from '../../middlewares/validateRequest';
 import { TipsCategoryValidation } from './tipsCategory.validation';
 
 const router = express.Router();
