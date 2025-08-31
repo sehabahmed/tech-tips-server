@@ -3,7 +3,8 @@ import { ObjectId } from "mongoose";
 export type TTips = {
     title: string;
     content: string;
-    tags: string;
+    category: ObjectId;
+    tags?: string;
     author?: string;
     upvotes?: number;
     upvotedBy?: ObjectId;

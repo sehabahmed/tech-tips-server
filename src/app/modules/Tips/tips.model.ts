@@ -1,5 +1,6 @@
 import mongoose, { model, Schema } from "mongoose";
 import { TTips } from "./tips.interface";
+import { TipsCategory } from "../TipsCategory/tipsCategory.model";
 
 const tipsSchema = new Schema<TTips>({
   title: {
@@ -8,6 +9,11 @@ const tipsSchema = new Schema<TTips>({
   },
   content: {
     type: String,
+    required: true,
+  },
+  category: {
+    type: mongoose.Schema.ObjectId,
+    ref: "TipsCategory",
     required: true,
   },
   tags: [{ type: String }],
@@ -39,5 +45,16 @@ const tipsSchema = new Schema<TTips>({
     default: Date.now,
   },
 });
+
+// Middleware to increment tips count in associated category
+tipsSchema.post("save", async function(doc) {
+    try{
+        await TipsCategory.findByIdAndUpdate(doc.category, {
+            $inc: { tipsCount: 1 }
+        })
+    }catch (error) {
+        throw new Error(`Failed to increment tips count for category ${doc.category}: ${error}`)
+    }
+})
 
 export const Tips = model<TTips>("Tips", tipsSchema);
