@@ -32,7 +32,14 @@ const getAllTipsFromDB = async (query: Record<string, unknown>) => {
   return result;
 };
 
+const getSingleTipsFromDB = async (id: string) => {
+  const result = await Tips.findById(id).populate("category");
+
+  return result;
+}
+
 export const TipsServices = {
   createTipsIntoDB,
   getAllTipsFromDB,
+  getSingleTipsFromDB,
 };

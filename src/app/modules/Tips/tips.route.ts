@@ -7,6 +7,8 @@ const router = express.Router();
 
 router.get("/", TipsControllers.getAllItems);
 
+router.get("/:id", TipsControllers.getSingleTips);
+
 router.post(
   "/",
   validateRequest(TipsValidation.createTipsValidationSchema),

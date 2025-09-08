@@ -25,7 +25,20 @@ const getAllItems = catchAsync(async (req, res) => {
     })
 })
 
+const getSingleTips = catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const tips = await TipsServices.getSingleTipsFromDB(id);
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "Single Tips retrieved successfully",
+        data: tips,
+    })
+})
+
 export const TipsControllers = {
     createTips,
     getAllItems,
+    getSingleTips,
 }

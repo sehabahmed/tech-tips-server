@@ -4,6 +4,7 @@ export type TTips = {
     title: string;
     content: string;
     category: ObjectId;
+    image: string;
     tags?: string;
     author?: string;
     upvotes?: number;

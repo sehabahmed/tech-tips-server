@@ -6,6 +6,7 @@ export const createTipsValidationSchema = z.object({
   body: z.object({
     title: z.string().min(1, "Title is required"),
     content: z.string().min(1, "Content is required"),
+    image: z.string().min(1, "Image is required"),
     category: objectId,
     tags: z.array(z.string()).optional(),
     author: objectId.optional(),
